@@ -1,0 +1,28 @@
+{
+  "name": "fix",
+  "version": "1.0",
+  "description" : "Build an Extension!",
+  "permissions": ["activeTab", "declarativeContent", "storage"],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts":[
+    {
+      "matches": ["https://service.cloud.teu.ac.jp/portal/lecture"],
+      "js": ["rewrite.js"]
+    }
+  ],
+  "page_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "32": "images/get_started32.png"
+    }
+  },
+  "icons": {
+    "48": "images/get_started48.png"
+  },
+  "options_page": "option.html",
+  "manifest_version": 2
+}
+

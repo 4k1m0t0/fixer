@@ -1,5 +1,5 @@
 {
-  "name": "fix",
+  "name": "Getting Started Example",
   "version": "1.0",
   "description" : "Build an Extension!",
   "permissions": ["activeTab", "declarativeContent", "storage"],
@@ -7,12 +7,6 @@
     "scripts": ["background.js"],
     "persistent": false
   },
-  "content_scripts":[
-    {
-      "matches": ["https://service.cloud.teu.ac.jp/portal/lecture"],
-      "js": ["rewrite.js"]
-    }
-  ],
   "page_action": {
     "default_popup": "popup.html",
     "default_icon": {

@@ -17,6 +17,7 @@ DOMの書き換えによって大学の学内サイトを使いやすくする�
 4. goto your own timetable.
 5. this extension modify "timetable URL". (maybe need once reload)
 
+***
 
 1. git clone またはダウンロードでレポジトリをローカルに置きます
 2. chrome://extensions にアクセスします

@@ -1,5 +1,4 @@
-console.log("bb");
-
+/* not use this function
 function rem(){
   let items = document.getElementsByClassName("lecture-navi-link");
 
@@ -7,14 +6,13 @@ function rem(){
     items[0].parentNode.removeChild(items[0]);
   }
   console.log("rem execute!");
-};
-
-console.log("bb");
+};*/
 
 /*window.onload = function() {
   console.log("loaded"); // DOM 構築後に実行したい関数の呼び出し
 };*/
 
+/* not use this function
 function seek(){
   let compose = document.getElementsByClassName("lecture-navi-link");
   //console.log(compose.length);
@@ -23,14 +21,14 @@ function seek(){
     return;
   }
 
-  /*let obs = new MutationObserver(rem);
+  let obs = new MutationObserver(rem);
 
   console.log(compose.length);
   obs.observe(document.getElementsByClassName("lecture-navi-link"), {
     attributes: true,
     childList: true
-  });*/
-}
+  });
+}*/
 
 function change(){
     let items = document.getElementsByClassName("lecture-navi-link");
@@ -43,12 +41,19 @@ function change(){
       let i = item.getAttribute("id");
       document.getElementById(i).removeAttribute("href");
       document.getElementById(i).setAttribute("href", ss);
+      document.getElementById(i).setAttribute("target", "_blank");
+      document.getElementById(i).setAttribute("rel", "noopener noreferrer");
+      document.getElementById(i).classList.add("lecture-url-link");
+      // remove class: this class curse some Exception in portal.
+      // shape up like pure "lecture-url-link"
+      //document.getElementById(i).classList.remove("lecture-navi-link");
+      document.getElementById(i).classList.remove("hpjax");
       console.log("ex");
     }
 }
 
-
-seek();
+//not use
+//seek();
 
 
 setTimeout("change()", 1000);

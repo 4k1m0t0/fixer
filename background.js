@@ -1,5 +1,4 @@
-/*chrome.runtime.onInstalled.addListener(function() {
-  // ローカルストレージに辞書型で色を保存
+/*  // ローカルストレージに辞書型で色を保存
   chrome.storage.sync.set({color: '#3aa757'}, function() {
     console.log('The color is green.');
   });

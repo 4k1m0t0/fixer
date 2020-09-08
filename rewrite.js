@@ -49,7 +49,17 @@ function change(){
 
 
 seek();
-rem();
+
+
+setTimeout("change()", 1000);
+setTimeout("change()", 2000);
+setTimeout("change()", 3000);
+setTimeout("change()", 4000);
+setTimeout("change()", 5000);
+setTimeout("change()", 6000);
+setTimeout("change()", 7000);
+setTimeout("change()", 8000);
+setTimeout("change()", 9000);
 setTimeout("change()", 10000);
 
 /*

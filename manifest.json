@@ -1,6 +1,6 @@
 {
   "name": "fixer",
-  "version": "1.2",
+  "version": "1.3",
   "description" : "more useful TUT portal",
   "permissions": ["activeTab", "declarativeContent", "storage"],
   "background": {
@@ -9,7 +9,7 @@
   },
   "content_scripts":[
     {
-      "matches": ["https://service.cloud.teu.ac.jp/portal/lecture*"],
+      "matches": ["https://service.cloud.teu.ac.jp/portal/*"],
       "js": ["rewrite.js"]
     }
   ],

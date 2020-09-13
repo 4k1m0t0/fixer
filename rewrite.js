@@ -8,37 +8,20 @@ function rem(){
   console.log("rem execute!");
 };*/
 
-/*window.onload = function() {
-  console.log("loaded"); // DOM 構築後に実行したい関数の呼び出し
-};*/
 
-/* not use this function
-function seek(){
-  let compose = document.getElementsByClassName("lecture-navi-link");
-  //console.log(compose.length);
-  if(compose.length==0){
-    window.setTimeout(seek, 500);
-    return;
-  }
 
-  let obs = new MutationObserver(rem);
-
-  console.log(compose.length);
-  obs.observe(document.getElementsByClassName("lecture-navi-link"), {
-    attributes: true,
-    childList: true
-  });
-}*/
 
 function change(){
+    // items is getting timetable element
     let items = document.getElementsByClassName("lecture-navi-link");
     for (let item of items) {
-      console.debug("item");
+      // get lesson information
       let t = item.getAttribute("id").slice(13);
       let s = document.getElementById("lecture-"+t);
-      // url
+      // get href
       let ss = s.querySelector("a").getAttribute("href");
       let i = item.getAttribute("id");
+      // change dom href
       document.getElementById(i).removeAttribute("href");
       document.getElementById(i).setAttribute("href", ss);
       document.getElementById(i).setAttribute("target", "_blank");
@@ -48,34 +31,47 @@ function change(){
       // shape up like pure "lecture-url-link"
       //document.getElementById(i).classList.remove("lecture-navi-link");
       document.getElementById(i).classList.remove("hpjax");
+      //document.getElementById(i).insertAdjacentHTML("afterbegin", <>)
       console.log("ex");
     }
 }
 
-//not use
-//seek();
+function addtimetotimetable(){
+  let items = document.getElementsByClassName("lecture-period");
+  const timetable = ["8:50-10:30", "10:45-12:25", "13:15-14:55", "15:10-16:50", "17:05-18:45"];
+  // https://service.cloud.teu.ac.jp/inside2/hachiouji/computer_science/%e6%8e%88%e6%a5%ad%e9%96%a2%e9%80%a3/
+  // 余裕があったらスクレイピング
 
+  // firstSemesterで前期っていうらしいね
+  let firstSemester = Array.prototype.slice.call(items, 1, 6);
+  let secondSemester = Array.prototype.slice.call(items, 7, 12);
+  if(flug == 1){
+    for (let i=0;i<5;i++){
+      let ele = document.createElement("p");
+      ele.textContent=timetable[i];
+      let ele2 = document.createElement("p");
+      ele2.textContent=timetable[i];
+      firstSemester[i].insertAdjacentElement("beforeend", ele);
+      secondSemester[i].insertAdjacentElement("beforeend", ele2);
+    }
+    flug = 0;
+  }
+}
 
-setTimeout("change()", 1000);
-setTimeout("change()", 2000);
-setTimeout("change()", 3000);
-setTimeout("change()", 4000);
-setTimeout("change()", 5000);
-setTimeout("change()", 6000);
-setTimeout("change()", 7000);
-setTimeout("change()", 8000);
-setTimeout("change()", 9000);
-setTimeout("change()", 10000);
+function executeFunc(arg1){
+  for (let i=1; i<11; i++){
+    let time = i*1000;
+    setTimeout(arg1, time);
+  }
+}
 
+// onloadでうまく動かないのを確認
 /*
-for (let item of items) {
-  console.debug("item");
-  let t = item.getAttribute("id").slice(13);
-  let s = document.getElementById("lecture-"+t);
-  // url
-  let ss = s.querySelector("a").getAttribute("href");
-  let i = item.getAttribute("id");
-  document.getElementById(i).removeAttribute("href");
-  document.getElementById(i).setAttribute("href", ss);
-  console.log("ex");
-}*/
+window.onload = function (){
+  change();
+};*/
+
+let flug = 1;
+executeFunc(change);
+executeFunc(addtimetotimetable);
+

@@ -70,8 +70,13 @@ function executeFunc(arg1){
 window.onload = function (){
   change();
 };*/
-
 let flug = 1;
-executeFunc(change);
-executeFunc(addtimetotimetable);
+chrome.storage.sync.get(["option"], function(data) {
+  if(data.option==="on"){
+    executeFunc(change);
+    executeFunc(addtimetotimetable);
+  }
+});
+
+
 

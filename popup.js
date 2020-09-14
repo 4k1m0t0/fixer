@@ -1,5 +1,5 @@
 // idを取得(button)
-let changeColor = document.getElementById('changeColor');
+/*let changeColor = document.getElementById('changeColor');
 
 // sync.setした'color'のvalueを取り出す
 chrome.storage.sync.get('color', function(data) {
@@ -18,4 +18,39 @@ changeColor.onclick = function(element) {
       tabs[0].id,
       {code: 'document.body.style.backgroundColor = "' + color + '";'});
   });
-};
+};*/
+
+
+
+// getElementsByClassNameとByIdでとれる値が違う
+let page = document.getElementById('add');
+
+const values = ['on', 'off'];
+function constructOptions(values){
+  for (let item of values) {
+    let input = document.createElement('input');
+    input.setAttribute("type", "radio");
+    input.setAttribute("name", "option");
+    input.setAttribute("value", item);
+
+    input.addEventListener('click', function() {
+      chrome.storage.sync.set({option: item}, function() {
+        console.log('option is' + item);
+      })
+    });
+
+    let text = document.createElement("span");
+    text.textContent = "extension "+item;
+
+    chrome.storage.sync.get(["option"], function(data) {
+      if(data.option===item){
+        input.setAttribute("checked", "checked");
+      }
+    });
+    page.appendChild(input);
+    page.appendChild(text);
+    page.appendChild(document.createElement("br"));
+  }
+}
+
+constructOptions(values);

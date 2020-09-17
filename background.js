@@ -20,3 +20,25 @@ function setting(){
     }]
   );
 }
+
+function loading(){
+  if (f==1){
+    let loader = document.createElement("div");
+    loader.setAttribute("id", "loading");
+    let content = document.createElement("div");
+    let text = document.createElement("span");
+    content.setAttribute("class", "loading-content");
+    text.textContent = "Welcome to TUT portal.";
+    content.appendChild(text);
+    loader.appendChild(content);
+
+
+
+    //let element = document.getElementById("panel-lecture");
+    let element = document.querySelector("body");
+    element.insertBefore(loader, element.firstChild);
+    f = 0;
+  }
+}
+
+window.addEventListener(webRequest.onCompleted, loading);

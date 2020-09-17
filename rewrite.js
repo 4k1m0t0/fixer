@@ -8,7 +8,25 @@ function rem(){
   console.log("rem execute!");
 };*/
 
+function loading(){
+  if (f==1){
+    let loader = document.createElement("div");
+    loader.setAttribute("id", "loading");
+    let content = document.createElement("div");
+    let text = document.createElement("span");
+    content.setAttribute("class", "loading-content");
+    text.textContent = "Welcome to TUT portal.";
+    content.appendChild(text);
+    loader.appendChild(content);
 
+
+
+    //let element = document.getElementById("panel-lecture");
+    let element = document.querySelector("body");
+    element.insertBefore(loader, element.firstChild);
+    f = 0;
+  }
+}
 
 
 function change(){
@@ -65,18 +83,27 @@ function executeFunc(arg1){
   }
 }
 
+function removeloadanimation(){
+  const load = document.getElementById("loading");
+  load.setAttribute("class", "loaded");
+  //load.classList.add('loaded');
+}
+
 // onloadでうまく動かないのを確認
 /*
 window.onload = function (){
   change();
 };*/
 let flug = 1;
+let f = 1;
 chrome.storage.sync.get(["option"], function(data) {
+  setTimeout(removeloadanimation, 5000);
   if(data.option==="on"){
+    executeFunc(loading);
     executeFunc(change);
     executeFunc(addtimetotimetable);
   }
 });
 
 
-
+window.addEventListener(webRequest.onCompleted, loading);

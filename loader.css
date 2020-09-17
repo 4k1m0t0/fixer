@@ -1,0 +1,68 @@
+/*https://codepen.io/natsukimemo/pen/ZEYwemZ*/
+
+#loading{
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+
+  font-size: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  top: 0;
+  left: 0;
+  z-index: 200;
+  position: fixed;
+}
+
+.loading-content {
+  position: absolute;
+  color: black;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+
+  border-bottom: solid 2px black;
+}
+
+/*
+1. 起点をbeforeを左、afterを右に設定
+2. 中央(width50%)までdivを生成する。この時アニメーションプロパティを設定
+3.
+
+*/
+
+.loading-content::after, .loading-content::before{
+  position: absolute;
+  content:"";
+  margin: 0 auto;
+  height: 110%;
+  width: 50%;
+  background: white;
+  animation: opentitle 5s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  transition-timing-function: ease-in;
+}
+
+
+.loading-content::before {left: 0;}
+.loading-content::after {right: 0;}
+
+.loaded {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@keyframes opentitle{
+  0%{width: 50%}
+  100%{width: 0%;}
+}
+
+h1 {
+  color: red;
+}

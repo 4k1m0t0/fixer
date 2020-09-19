@@ -8,6 +8,7 @@ function rem(){
   console.log("rem execute!");
 };*/
 
+/*
 function loading(){
   if (f==1){
     let loader = document.createElement("div");
@@ -26,10 +27,11 @@ function loading(){
     element.insertBefore(loader, element.firstChild);
     f = 0;
   }
-}
+}*/
 
 
 function change(){
+    //document.querySelector("style").remove();
     // items is getting timetable element
     let items = document.getElementsByClassName("lecture-navi-link");
     for (let item of items) {
@@ -76,6 +78,38 @@ function addtimetotimetable(){
   }
 }
 
+function cssrewrite(){
+  //document.getElementById("global-navi").removeAttribute("id");
+}
+
+function changeElementOrder(){
+  if(fl == 1){
+    let timetable = document.getElementById("lecture-navi");
+    let d = document.getElementById("panel-lecture");
+    let sections = Array.from(d.getElementsByClassName("portal-section"));
+    d.appendChild(timetable);
+    d.appendChild(sections[0]);
+    d.appendChild(sections[1]);
+    d.appendChild(sections[2]);
+    d.insertBefore(timetable, document.getElementById("lecture-cards"));
+    fl = 0;
+  }
+}
+
+function addtoppad(){
+  let d = document.createElement("div");
+  d.setAttribute("id", "top-padding");
+  document.getElementsByTagName("body")[0].insertBefore(d ,document.getElementById("contents"));
+}
+
+function changePortalSectionStructure(){
+  let d = document.getElementById("panel-lecture");
+  let sections = Array.from(d.getElementsByClassName("portal-section"));
+  sections[0].appendChild(sections[1].getElementsByTagName("dl")[0]);
+  sections[1].remove();
+  sections[2].appendChild(sections[2].getElementsByTagName("a")[0]);
+}
+
 function executeFunc(arg1){
   for (let i=1; i<11; i++){
     let time = i*1000;
@@ -83,27 +117,56 @@ function executeFunc(arg1){
   }
 }
 
-function removeloadanimation(){
+function addfont(){
+  let h = document.getElementsByTagName("header");
+  let l = document.createElement("link");
+  l.setAttribute("href", "https://fonts.googleapis.com/css?family=Zilla+Slab");
+  l.setAttribute("rel", "stylesheet");
+  let l2 = document.createElement("link");
+  l2.setAttribute("href", "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400&display=swap");
+  l2.setAttribute("rel", "stylesheet");
+
+  h[0].appendChild(l);
+  h[0].appendChild(l2);
+}
+
+function addExtensionComment(){
+  let f = document.getElementById("global-footer");
+  let text = document.createElement("p");
+  text.textContent = "this page using genzai extension. extension is not official project.";
+  f.appendChild(text);
+}
+
+/*function removeloadanimation(){
   const load = document.getElementById("loading");
   load.setAttribute("class", "loaded");
   //load.classList.add('loaded');
-}
+}*/
 
-// onloadでうまく動かないのを確認
-/*
+// 3秒待ちがあるので時間割の中身操作系はダメ
 window.onload = function (){
-  change();
-};*/
+  //change();
+  changeElementOrder();
+  addtimetotimetable();
+  addtoppad();
+  addfont();
+  changePortalSectionStructure();
+  addExtensionComment();
+};
+
 let flug = 1;
 let f = 1;
+let fl = 1;
+
 chrome.storage.sync.get(["option"], function(data) {
-  setTimeout(removeloadanimation, 5000);
   if(data.option==="on"){
-    executeFunc(loading);
+    /*executeFunc(loading);*/
     executeFunc(change);
-    executeFunc(addtimetotimetable);
+    //executeFunc(addtimetotimetable);
+    executeFunc(cssrewrite);
+    //executeFunc(changeElementOrder);
   }
 });
 
 
-window.addEventListener(webRequest.onCompleted, loading);
+

@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  /*display: block;*/
+  box-sizing: border-box;
+}
+
+html body {
+  color: #000000;
+  background-color: #ffffff;
+  /*
+  font-family: "游ゴシック Medium", "Yu Gothic", "游ゴシック体", YuGothic, sans-serif;
+  font-weight: 500;
+  */
+  font-family: "Noto Sans JP","Zilla Slab", sans-serif, serif;
+
+}
+
+/*
+ *
+ * header setting
+ *
+ */
+
+#global-header{
+  background-color: #ffffff;
+  box-shadow: none;
+}
+
+html body #global-header {
+  /*width: initial;*/
+}
+
+html>body>header>a>h1 {
+  color: #000000;
+}
+
+/* navi setting */
+
+html body #global-navi{
+  background-color: #ffffff;
+}
+
+html #global-navi .navi-block .icon{
+  height: 32px;
+  width: 32px;
+}
+
+html #global-navi a:not(.navi-active) .navi-block{
+  opacity: .8;
+}
+
+/*
+ *
+ * header setting end
+ *
+ */
+
+/* table setting */
+
+html body #panel-lecture,
+html body #contents .content-panel,
+html body .content-active{
+  box-shadow: none;
+  min-height: auto;
+}
+
+html body #lecture-cards,
+html body #contents #panel-lecture #lecture-navi h2,/*:nth-of-type(2),*/
+html body #contents #panel-lecture #lecture-navi #portal-timetable-others{
+  display: none;
+}
+
+html body #panel-lecture, html body #contents,
+html #contents .content-panel,
+html body #panel-lecture #lecture-navi{
+  padding: 0;
+  margin: 0;
+  border-bottom: none;
+}
+
+/* もしかしたら使うかも
+section:nth-of-type(2)::before{
+  display: inline;
+  width: 80%;
+  border-bottom: 1px solid;
+}*/
+
+html #panel-lecture{
+  line-height: 1.5;
+}
+
+html #panel-lecture #lecture-navi .portal-timetable th, #panel-lecture #lecture-navi .portal-timetable td{
+  max-width: none;
+  width: 120px;
+}
+
+#lecture-navi, .flex-wrap{
+  display: flex;
+  justify-content: center;
+}
+
+/*{
+  justify-content: center;
+}
+*/
+/* table setting end*/
+
+#top-padding{
+  height: 120px;
+}
+
+
+/* others */
+
+html #panel-lecture #cumpusweb-button.portal-button{
+  display: none;
+}
+
+html dl>dd{
+  padding: 0;
+}
+
+html #contents .content-panel section:nth-of-type(n+2){
+  display: block;
+  width: 80%;
+  padding: 0;
+  margin: 0 auto;
+}
+
+html body>footer{
+  margin: 10px 0;
+}
+
+/* media query */
+
+@media screen and (max-width: 640px){
+  html body>#global-navi .navi-block {
+    background-color: #ffffff;
+  }
+
+  #top-padding{
+    display: none;
+  }
+}

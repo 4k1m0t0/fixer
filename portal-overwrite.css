@@ -16,6 +16,11 @@ html body {
 
 }
 
+body #contents #panel-lecture,
+body #contents #panel-index{
+  display: inherit;
+}
+
 /*
  *
  * header setting
@@ -50,6 +55,19 @@ html #global-navi a:not(.navi-active) .navi-block{
   opacity: .8;
 }
 
+/* index page setting */
+
+html body #contents #panel-index{
+  background-color: #ffffff;
+}
+
+
+html body #contents #panel-index
+.flex-wrap section:nth-of-type(n+3):nth-of-type(-n+6){
+  display: none;
+}
+
+
 /*
  *
  * header setting end
@@ -59,8 +77,8 @@ html #global-navi a:not(.navi-active) .navi-block{
 /* table setting */
 
 html body #panel-lecture,
-html body #contents .content-panel,
-html body .content-active{
+html body #contents .content-panel
+/*html body .content-active*/{
   box-shadow: none;
   min-height: auto;
 }
@@ -121,12 +139,13 @@ html dl>dd{
   padding: 0;
 }
 
+/*
 html #contents .content-panel section:nth-of-type(n+2){
   display: block;
   width: 80%;
   padding: 0;
   margin: 0 auto;
-}
+}*/
 
 html body>footer{
   margin: 10px 0;

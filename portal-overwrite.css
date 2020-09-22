@@ -13,7 +13,18 @@ html body {
   font-weight: 500;
   */
   font-family: "Noto Sans JP","Zilla Slab", sans-serif, serif;
+  animation: opening;
+  animation-duration: 1s;
+  animation-delay: 3s;
+}
 
+@keyframes opening{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
 }
 
 body #contents #panel-lecture,
@@ -44,6 +55,7 @@ html>body>header>a>h1 {
 
 html body #global-navi{
   background-color: #ffffff;
+  /*display: none;*/
 }
 
 html #global-navi .navi-block .icon{
@@ -160,5 +172,6 @@ html body>footer{
 
   #top-padding{
     display: none;
+    /*height: 60px;*/
   }
 }

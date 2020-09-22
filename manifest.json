@@ -1,6 +1,6 @@
 {
   "name": "fixer",
-  "version": "1.3",
+  "version": "1.4.0",
   "description" : "more useful TUT portal",
   "permissions": ["activeTab", "declarativeContent", "storage"], //"webRequest", "*://service.cloud.teu.ac.jp/*"],
   "background": {
@@ -14,12 +14,6 @@
       "css": ["loader.css", "portal-overwrite.css"],
       "run_at": "document_idle"
     }
-    /*{
-      "matches": ["https://service.cloud.teu.ac.jp/portal/index"],
-      "js": ["rewrite.js"],
-      "css": ["loader.css", "portal-overwrite.css"],
-      "run_at": "document_idle"
-    }*/
   ],
   "page_action": {
     "default_popup": "popup.html",

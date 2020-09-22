@@ -25,6 +25,9 @@
   left: 0;
   right: 0;
   margin: auto;
+  animation: opa;
+  animation-duration: 1s;
+  animation-delay: 2s;
 
   border-bottom: solid 2px black;
 }
@@ -43,7 +46,7 @@
   height: 110%;
   width: 50%;
   background: white;
-  animation: opentitle 5s;
+  animation: opentitle 2.5s;
   animation-fill-mode: forwards;
   animation-iteration-count: 1;
   transition-timing-function: ease-in;
@@ -58,7 +61,20 @@
   visibility: hidden;
 }
 
+@keyframes opa{
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
 @keyframes opentitle{
-  0%{width: 50%}
-  100%{width: 0%;}
+  0%{
+    width: 50%;
+  }
+  100%{
+    width: 0%;
+  }
 }

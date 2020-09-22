@@ -40,5 +40,3 @@ function loading(){
     f = 0;
   }
 }
-
-window.addEventListener(webRequest.onCompleted, loading);

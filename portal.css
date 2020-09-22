@@ -1,0 +1,1194 @@
+@charset "UTF-8";
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a,
+abbr, acronym, address, big, cite, code, del,
+dfn, em, img, ins, kbd, q, s, samp, small, strike,
+strong, sub, sup, tt, var, b, u, i,
+center, dl, dt, dd, ol, ul, li, fieldset, form, label,
+legend, table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, figure, figcaption,
+footer, header, hgroup, menu, nav, output, ruby, section,
+summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline
+}
+
+html {
+  line-height: 1
+}
+
+ol, ul {
+  list-style: none
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle
+}
+
+q, blockquote {
+  quotes: none
+}
+
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none
+}
+
+a img {
+  border: 0
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block
+}
+
+html {
+  line-height: 1.3
+}
+
+h1, h2, h3 {
+  font-weight: bold
+}
+
+p {
+  text-indent: 1em
+}
+
+a:link, a:visited {
+  color: #11f;
+  text-decoration: none
+}
+
+a:hover {
+  text-decoration: underline
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0
+}
+
+input, select {
+  vertical-align: middle
+}
+
+ol, ul {
+  list-style: initial;
+  padding-left: 40px
+}
+
+dl>dd {
+  padding: 5px 0;
+  padding-left: 20px
+}
+
+@charset "UTF-8";
+body {
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "sans";
+  color: #666;
+  min-width: 640px;
+  background-color: #ffffff;
+}
+
+body>header {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  min-width: 640px;
+  background-color: #ffffff;
+  box-shadow: 1px 3px 10px 0 rgba(0, 0, 0, 0.2)
+}
+
+body #global-navi {
+  position: fixed;
+  top: 0;
+  display: flex;
+  margin-top: 44px;
+  padding-top: 6px;
+  z-index: 101;
+  width: 100%;
+  background-color: #ffffff;
+  overflow-y: auto;
+  justify-content: center
+}
+
+body #contents {
+  margin-top: 100px;
+  margin-right: 0
+}
+
+body>footer {
+  min-height: 15px;
+  margin: 10px 0;
+  margin-left: 100px;
+  text-align: center;
+  font-size: .72em;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none
+}
+
+.portal-notice {
+  color: red
+}
+
+.portal-icon-button {
+  display: inline;
+  width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  vertical-align: middle;
+  opacity: .6
+}
+
+.portal-icon-button:hover {
+  opacity: 1;
+  cursor: pointer
+}
+
+.portal-icon-button:active {
+  opacity: .8
+}
+
+.portal-icon-button>.icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px
+}
+
+.portal-icon-button>.icon.onopen-icon {
+  background: no-repeat url(../img/portal-symbol-icons.png) 0 0
+}
+
+.portal-icon-button>.icon.close-icon {
+  background: no-repeat url(../img/portal-symbol-icons.png) -20px 0
+}
+
+.portal-icon-button>.icon.delete-icon {
+  background: no-repeat url(../img/portal-symbol-icons.png) -40px 0
+}
+
+.portal-icon-button>.icon.renew-icon {
+  background: no-repeat url(../img/portal-symbol-icons.png) -60px 0
+}
+
+.portal-icon-button>.icon.left-arrow-icon {
+  background: no-repeat url(../img/portal-symbol-icons.png) -80px 0
+}
+
+.portal-icon-button>.icon.right-arrow-icon {
+  background: no-repeat url(../img/portal-symbol-icons.png) -100px 0
+}
+
+.portal-icon-button>.icon.left-arrows-icon {
+  background: no-repeat url(../img/portal-symbol-icons.png) -120px 0
+}
+
+.portal-icon-button>.icon.right-arrows-icon {
+  background: no-repeat url(../img/portal-symbol-icons.png) -140px 0
+}
+
+.portal-button {
+  display: inline;
+  border-radius: 2px;
+  padding: 2px 10px;
+  vertical-align: middle;
+  color: #fff;
+  background-color: #ffffff;
+  border: solid 1px #336f99;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none
+}
+
+.portal-button:hover {
+  color: #fff;
+  background-color: #ffffff;
+  cursor: pointer
+}
+
+.portal-button:active {
+  background-color: #ffffff;
+  border: solid 1px #336f99
+}
+
+a.portal-button:link, a.portal-button:hover, a.portal-button:visited {
+  color: #fff;
+  text-decoration: none
+}
+
+.portal-toggle {
+  display: inline-block;
+  width: 60px;
+  border: solid 1px #adadad;
+  border-radius: 3px
+}
+
+.portal-toggle.disable {
+  opacity: .6
+}
+
+.portal-toggle>.portal-toggle-on, .portal-toggle>.portal-toggle-off {
+  display: inline-block;
+  width: 20px;
+  padding: 5px;
+  border-radius: 2px;
+  text-align: center
+}
+
+.portal-toggle>.portal-toggle-on {
+  border-radius: 2px 0 0 2px / 2px 0 0 2px
+}
+
+.portal-toggle>.portal-toggle-off {
+  border-radius: 0 2px 2px 0 / 0 2px 2px 0
+}
+
+.portal-toggle>.active {
+  color: white;
+  background-color: red
+}
+
+.portal-label {
+  vertical-align: middle
+}
+
+.portal-text {
+  outline: 0;
+  width: 250px
+}
+
+.portal-text:focus {
+  outline: solid 1px #336f99
+}
+
+.portal-password {
+  outline: 0
+}
+
+.portal-password:focus {
+  outline: solid 1px #336f99
+}
+
+.portal-select {
+  width: 250px
+}
+
+.portal-table th {
+  text-align: center
+}
+
+.portal-table td {
+  min-width: 100px
+}
+
+.portal-table th, .portal-table td {
+  padding: 2px 8px
+}
+
+.portal-iframe {
+  border: 0
+}
+
+.top-label-error {
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  background: #c33;
+  color: #eee;
+  font-weight: bold
+}
+
+.top-label-error a {
+  color: #fff
+}
+
+#portal-floatwindow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 5000
+}
+
+#portal-floatwindow .portal-floatwindow-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 5000;
+  background-color: rgba(127, 127, 127, 0.4)
+}
+
+#portal-floatwindow .portal-floatwindow-window {
+  position: fixed;
+  overflow: hidden;
+  border-radius: 3px;
+  box-shadow: 2px 2px 5px #000;
+  background-color: white;
+  z-index: 5001
+}
+
+#portal-floatwindow .portal-floatwindow-window .portal-floatwindow-content {
+  overflow: auto
+}
+
+.page-navi span {
+  vertical-align: text-bottom
+}
+
+.content-part {
+  width: 438px;
+  max-width: 438px;
+  overflow: hidden;
+  background-color: #fff;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  border: solid 1px #adadad;
+  border-radius: 5px 5px 0 5px / 5px 5px 0 5px;
+  box-shadow: 1px 3px 10px 0 rgba(0, 0, 0, 0.5);
+  padding: 10px
+}
+
+.content-part .content-part-title {
+  min-height: 25px;
+  font-weight: bold;
+  font-size: .9em;
+  margin-bottom: 2px
+}
+
+.content-part .content-part-body {
+  overflow: hidden;
+  font-size: .84em;
+  background-color: #fff;
+  box-shadow: 1px 3px 10px 0 rgba(0, 0, 0, 0.2) inset;
+  padding: 10px
+}
+
+.content-part .content-part-body .portal-button {
+  font-size: .9em
+}
+
+.content-part .content-part-body .portal-text, .content-part .content-part-body .portal-textarea {
+  font-size: .84em
+}
+
+.content-part .content-part-body .portal-textarea {
+  width: 403px;
+  max-width: 403px;
+  min-width: 403px;
+  height: 120px;
+  resize: vertical
+}
+
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap
+}
+
+.clearfix:after {
+  display: block;
+  clear: both;
+  height: 0;
+  visibility: hidden;
+  content: "."
+}
+
+.float-right {
+  display: inline;
+  float: right
+}
+
+.float-left {
+  display: inline;
+  float: left
+}
+
+.under-space {
+  margin-bottom: 10px
+}
+
+.part-block {
+  padding: 5px;
+  overflow-x: auto
+}
+
+.under-line {
+  border-bottom: solid 1px;
+  margin-bottom: 15px;
+  padding-bottom: 10px
+}
+
+.select-none {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none
+}
+
+body>header {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none
+}
+
+body>header>a>h1 {
+  float: left;
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 15px 15px;
+  color: #666
+}
+
+body>header>.profile-box {
+  float: right;
+  padding: 18px 15px 0 0;
+  font-size: .8em
+}
+
+#global-navi {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none
+}
+
+#global-navi a {
+  text-decoration: none
+}
+
+#global-navi a:not(.navi-active) .navi-block {
+  opacity: .5
+}
+
+#global-navi a:not(.navi-active):hover .navi-block {
+  opacity: .8
+}
+
+#global-navi .navi-block {
+  margin-bottom: 10px;
+  width: 80px
+}
+
+#global-navi .navi-block .icon {
+  height: 32px;
+  width: 40px;
+  margin: auto
+}
+
+#global-navi .navi-block .label {
+  padding-top: 2px;
+  font-size: .78em;
+  text-align: center;
+  color: #666
+}
+
+#navi-index .icon {
+  background-image: url(../img/portal-icons.png);
+  background-repeat: no-repeat;
+  background-position: 0 0
+}
+
+#navi-inside .icon {
+  background-image: url(../img/portal-icons.png);
+  background-repeat: no-repeat;
+  background-position: -82px 0
+}
+
+#navi-calendar .icon {
+  background-image: url(../img/portal-icons.png);
+  background-repeat: no-repeat;
+  background-position: -164px 0
+}
+
+#navi-config .icon {
+  background-image: url(../img/portal-icons.png);
+  background-repeat: no-repeat;
+  background-position: -246px 0
+}
+
+#navi-help .icon {
+  background-image: url(../img/portal-icons.png);
+  background-repeat: no-repeat;
+  background-position: -328px 0
+}
+
+#navi-lecture .icon {
+  background-image: url(../img/portal-icons.png);
+  background-repeat: no-repeat;
+  background-position: -410px 0
+}
+
+#navi-teacher .icon {
+  background-image: url(../img/portal-icons.png);
+  background-repeat: no-repeat;
+  background-position: -656px 0
+}
+
+#navi-group .icon {
+  background-image: url(../img/portal-icons.png);
+  background-repeat: no-repeat;
+  background-position: -492px 0
+}
+
+#contents .content-panel {
+  border-radius: 0 0 0 15px / 0 0 0 15px;
+  box-shadow: 1px 3px 15px 0 rgba(0, 0, 0, 0.2) inset;
+  padding: 20px 0 5px 0;
+  background: #fff;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch
+}
+
+#contents .content-panel>* {
+  margin-left: 15px
+}
+
+#contents .content-panel:not(.content-active) {
+  display: none
+}
+
+#contents .content-panel.content-active {
+  display: block
+}
+
+#contents .content-panel .portal-section {
+  padding-bottom: 20px
+}
+
+#contents .content-panel .portal-section header {
+  margin: 0 0 15px 0;
+  padding: 5px 0
+}
+
+#contents .content-panel .portal-section h1 {
+  font-weight: bold;
+  border-bottom: 1px solid;
+  margin-bottom: 2px
+}
+
+#contents .content-panel .portal-section h2 {
+  padding-top: 15px;
+  padding-bottom: 5px;
+  font-size: 1.5em
+}
+
+#contents .content-panel .portal-section h3 {
+  padding-top: 15px;
+  padding-bottom: 5px;
+  font-size: 1.2em
+}
+
+#contents .content-panel .portal-section p {
+  padding: 10px 0;
+  text-indent: 1em
+}
+
+#contents .content-panel .portal-section .thumbnail {
+  border: 2px #ccc solid
+}
+
+#contents .content-panel .portal-section .portal-button {
+  font-size: .78em
+}
+
+body>footer a:link, body>footer a:visited, body>footer a:hover {
+  color: #666
+}
+
+@media screen and (max-width:640px) {
+  body>#global-header {
+    box-shadow: initial
+  }
+  body>#global-navi {
+    position: initial;
+    bottom: initial;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin-top: 44px
+  }
+  body>#global-navi .navi-block {
+    display: inline-block;
+    width: 40px;
+    margin: 0 10px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #ffffff;
+  }
+  body>#global-navi .navi-block .label {
+    display: none
+  }
+  body>#contents {
+    margin-top: initial;
+    margin-left: initial
+  }
+  body>#contents .content-panel>* {
+    margin-left: 0
+  }
+  .flex-wrap {
+    justify-content: center
+  }
+  .content-part {
+    margin-right: auto;
+    margin-left: auto
+  }
+}
+
+@charset "UTF-8";
+.portal-style-default .portal-text:hover {
+  outline: solid 1px #336f99
+}
+
+.portal-style-default .portal-text:focus {
+  outline: solid 1px #235f89
+}
+
+.portal-style-default .portal-text:hover {
+  outline: solid 1px #336f99
+}
+
+.portal-style-default .portal-text:focus {
+  outline: solid 1px #235f89
+}
+
+.portal-style-default .portal-textarea:hover {
+  outline: solid 1px #336f99
+}
+
+.portal-style-default .portal-textarea:focus {
+  outline: solid 1px #235f89
+}
+
+.portal-style-default .portal-button {
+  background-color: #58a;
+  border: solid 1px #336f99
+}
+
+.portal-style-default .portal-button:hover {
+  background-color: #45789a;
+  border: solid 1px #235f89
+}
+
+.portal-style-default .portal-button:active {
+  background-color: #58a;
+  border: solid 1px #336f99
+}
+
+.portal-style-default #portal-floatwindow .portal-floatwindow-window {
+  border: #45789a
+}
+
+.portal-style-default #portal-floatwindow .portal-floatwindow-heder {
+  background-color: #58a
+}
+
+.portal-style-default #global-navi .navi-active .label {
+  color: #58a
+}
+
+.portal-style-default #navi-index.navi-active .icon {
+  background-position: 0 -82px
+}
+
+.portal-style-default #navi-inside.navi-active .icon {
+  background-position: -82px -82px
+}
+
+.portal-style-default #navi-calendar.navi-active .icon {
+  background-position: -164px -82px
+}
+
+.portal-style-default #navi-config.navi-active .icon {
+  background-position: -246px -82px
+}
+
+.portal-style-default #navi-help.navi-active .icon {
+  background-position: -328px -82px
+}
+
+.portal-style-default #navi-lecture.navi-active .icon {
+  background-position: -410px -82px
+}
+
+.portal-style-default #navi-group.navi-active .icon {
+  background-position: -492px -82px
+}
+
+.portal-style-default #navi-teacher.navi-active .icon {
+  background-position: -656px -82px
+}
+
+.portal-style-red .portal-text:hover {
+  outline: solid 1px #854545
+}
+
+.portal-style-red .portal-text:focus {
+  outline: solid 1px #752525
+}
+
+.portal-style-red .portal-password:hover {
+  outline: solid 1px #854545
+}
+
+.portal-style-red .portal-password:focus {
+  outline: solid 1px #752525
+}
+
+.portal-style-red .portal-textarea:hover {
+  outline: solid 1px #854545
+}
+
+.portal-style-red .portal-textarea:focus {
+  outline: solid 1px #752525
+}
+
+.portal-style-red .portal-button {
+  background-color: #855555;
+  border: solid 1px #854545
+}
+
+.portal-style-red .portal-button:hover {
+  background-color: #753535;
+  border: solid 1px #752525
+}
+
+.portal-style-red .portal-button:active {
+  background-color: #855555;
+  border: solid 1px #854545
+}
+
+.portal-style-red #portal-floatwindow .portal-floatwindow-window {
+  border: solid 1px #752525
+}
+
+.portal-style-red #portal-floatwindow .portal-floatwindow-heder {
+  background-color: #855555
+}
+
+.portal-style-red>header>a>h1 {
+  color: #753535
+}
+
+.portal-style-red #global-navi .navi-active .label {
+  color: #855555
+}
+
+.portal-style-red #navi-index.navi-active .icon {
+  background-position: 0 -164px
+}
+
+.portal-style-red #navi-inside.navi-active .icon {
+  background-position: -82px -164px
+}
+
+.portal-style-red #navi-calendar.navi-active .icon {
+  background-position: -164px -164px
+}
+
+.portal-style-red #navi-config.navi-active .icon {
+  background-position: -246px -164px
+}
+
+.portal-style-red #navi-help.navi-active .icon {
+  background-position: -328px -164px
+}
+
+.portal-style-red #navi-lecture.navi-active .icon {
+  background-position: -410px -164px
+}
+
+.portal-style-red #navi-group.navi-active .icon {
+  background-position: -492px -164px
+}
+
+.portal-style-red #navi-teacher.navi-active .icon {
+  background-position: -656px -164px
+}
+
+.portal-style-blue .portal-text:hover {
+  outline: solid 1px #454585
+}
+
+.portal-style-blue .portal-text:focus {
+  outline: solid 1px #252575
+}
+
+.portal-style-blue .portal-password:hover {
+  outline: solid 1px #454585
+}
+
+.portal-style-blue .portal-password:focus {
+  outline: solid 1px #252575
+}
+
+.portal-style-blue .portal-textarea:hover {
+  outline: solid 1px #454585
+}
+
+.portal-style-blue .portal-textarea:focus {
+  outline: solid 1px #252575
+}
+
+.portal-style-blue .portal-button {
+  background-color: #555585;
+  border: solid 1px #454585
+}
+
+.portal-style-blue .portal-button:hover {
+  background-color: #353575;
+  border: solid 1px #252575
+}
+
+.portal-style-blue .portal-button:active {
+  background-color: #555585;
+  border: solid 1px #454585
+}
+
+.portal-style-blue #portal-floatwindow .portal-floatwindow-window {
+  border: solid 1px #252575
+}
+
+.portal-style-blue #portal-floatwindow .portal-floatwindow-heder {
+  background-color: #555585
+}
+
+.portal-style-blue>header>a>h1 {
+  color: #353575
+}
+
+.portal-style-blue #global-navi .navi-active .label {
+  color: #555585
+}
+
+.portal-style-blue #navi-index.navi-active .icon {
+  background-position: 0 -246px
+}
+
+.portal-style-blue #navi-inside.navi-active .icon {
+  background-position: -82px -246px
+}
+
+.portal-style-blue #navi-calendar.navi-active .icon {
+  background-position: -164px -246px
+}
+
+.portal-style-blue #navi-config.navi-active .icon {
+  background-position: -246px -246px
+}
+
+.portal-style-blue #navi-help.navi-active .icon {
+  background-position: -328px -246px
+}
+
+.portal-style-blue #navi-lecture.navi-active .icon {
+  background-position: -410px -246px
+}
+
+.portal-style-blue #navi-group.navi-active .icon {
+  background-position: -492px -246px
+}
+
+.portal-style-blue #navi-teacher.navi-active .icon {
+  background-position: -656px -246px
+}
+
+.portal-style-green .portal-text:hover {
+  outline: solid 1px #458545
+}
+
+.portal-style-green .portal-text:focus {
+  outline: solid 1px #257525
+}
+
+.portal-style-green .portal-password:hover {
+  outline: solid 1px #458545
+}
+
+.portal-style-green .portal-password:focus {
+  outline: solid 1px #257525
+}
+
+.portal-style-green .portal-textarea:hover {
+  outline: solid 1px #458545
+}
+
+.portal-style-green .portal-textarea:focus {
+  outline: solid 1px #257525
+}
+
+.portal-style-green .portal-button {
+  background-color: #558555;
+  border: solid 1px #458545
+}
+
+.portal-style-green .portal-button:hover {
+  background-color: #357535;
+  border: solid 1px #257525
+}
+
+.portal-style-green .portal-button:active {
+  background-color: #558555;
+  border: solid 1px #458545
+}
+
+.portal-style-green #portal-floatwindow .portal-floatwindow-window {
+  border: solid 1px #257525
+}
+
+.portal-style-green #portal-floatwindow .portal-floatwindow-heder {
+  background-color: #558555
+}
+
+.portal-style-green>header>a>h1 {
+  color: #357535
+}
+
+.portal-style-green #global-navi .navi-active .label {
+  color: #558555
+}
+
+.portal-style-green #navi-index.navi-active .icon {
+  background-position: 0 -328px
+}
+
+.portal-style-green #navi-inside.navi-active .icon {
+  background-position: -82px -328px
+}
+
+.portal-style-green #navi-calendar.navi-active .icon {
+  background-position: -164px -328px
+}
+
+.portal-style-green #navi-config.navi-active .icon {
+  background-position: -246px -328px
+}
+
+.portal-style-green #navi-help.navi-active .icon {
+  background-position: -328px -328px
+}
+
+.portal-style-green #navi-lecture.navi-active .icon {
+  background-position: -410px -328px
+}
+
+.portal-style-green #navi-group.navi-active .icon {
+  background-position: -492px -328px
+}
+
+.portal-style-green #navi-teacher.navi-active .icon {
+  background-position: -656px -328px
+}
+
+@charset "UTF-8";
+#panel-config #select-style .color-box {
+  height: 10px;
+  margin: 5px
+}
+
+#panel-config #select-style .color-box.default {
+  background: #336f99
+}
+
+#panel-config #select-style .color-box.red {
+  background: #854545
+}
+
+#panel-config #select-style .color-box.blue {
+  background: #454585
+}
+
+#panel-config #select-style .color-box.green {
+  background: #458545
+}
+
+#panel-config #navi-sort .content-part-body>.layer {
+  margin-top: 5px
+}
+
+#panel-config #navi-sort .portal-button>a {
+  text-decoration: none;
+  color: #fff
+}
+
+#panel-config #clear-storage .content-part-body>.layer {
+  margin-top: 5px
+}
+
+#panel-config #change-password #passwd-errors {
+  height: 105px;
+  padding: 10px 0 10px 40px
+}
+
+#panel-config #change-password #passwd-errors>.warning {
+  display: list-item;
+  color: #f00
+}
+
+#panel-config #change-password #passwd-errors #passwd-notMatchError {
+  display: none
+}
+
+#panel-config #change-password .portal-password {
+  width: 200px
+}
+
+@charset "UTF-8";
+#panel-group .group-list {
+  list-style: none;
+  padding: 0 10px
+}
+
+#panel-group .group-list>li {
+  overflow: hidden;
+  line-height: 26px;
+  padding: 1px 5px
+}
+
+#panel-group .group-list>li:nth-child(even) {
+  background-color: #ededed
+}
+
+#panel-group .group-list .portal-button {
+  float: right
+}
+
+#panel-group-management #group-management-search-by-student-id {
+  width: 350px
+}
+
+#panel-group-management #group-management-search-by-student-id .portal-textarea {
+  width: 350px;
+  height: 140px
+}
+
+@charset "UTF-8";
+#panel-help #password-symbol-list {
+  margin: 10px 20px
+}
+
+#panel-lecture #cumpusweb-button.portal-button {
+  font-size: 1.5em;
+  border-color: #066;
+  background: -moz-linear-gradient(top, rgba(60, 100, 50, 0.5), #066);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(60, 100, 50, 0.5)), to(#066));
+  background: linear-gradient(top, rgba(60, 100, 50, 0.5), #066)
+}
+
+#panel-lecture #cumpusweb-button.portal-button:hover {
+  background: -moz-linear-gradient(top, #3c6432, #066);
+  background: -webkit-gradient(linear, left top, left bottom, from(#3c6432), to(#066));
+  background: linear-gradient(top, #3c6432, #066)
+}
+
+#panel-lecture #cumpusweb-button.portal-button:active {
+  background: -moz-linear-gradient(top, rgba(60, 100, 50, 0.5), #066);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(60, 100, 50, 0.5)), to(#066));
+  background: linear-gradient(top, rgba(60, 100, 50, 0.5), #066)
+}
+
+#panel-lecture #lecture-navi {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 10px 0;
+  border-bottom: solid 1px
+}
+
+#panel-lecture #lecture-navi .portal-timetable, #panel-lecture #lecture-navi .portal-timetable th, #panel-lecture #lecture-navi .portal-timetable td {
+  border: solid 1px
+}
+
+#panel-lecture #lecture-navi .portal-timetable {
+  margin: 10px
+}
+
+#panel-lecture #lecture-navi .portal-timetable th, #panel-lecture #lecture-navi .portal-timetable td {
+  width: 100px;
+  max-width: 100px;
+  font-size: .8em
+}
+
+#panel-lecture #lecture-navi .portal-timetable th {
+  font-weight: bold;
+  text-align: center;
+  background-color: #ededed
+}
+
+#panel-lecture #lecture-navi .portal-timetable th.lecture-period {
+  width: 40px;
+  min-width: 40px
+}
+
+#panel-lecture #lecture-navi .portal-timetable td {
+  height: 40px;
+  padding: 5px;
+  text-align: center
+}
+
+#panel-lecture #lecture-navi .portal-timetable td .lecture-navi-link {
+  margin: 5px 0;
+  display: block
+}
+
+#panel-lecture #lecture-navi #portal-timetable-others {
+  margin: 10px 10px
+}
+
+#panel-lecture #lecture-navi #portal-timetable-others .lecture-navi-link {
+  margin: 0 20px;
+  display: block;
+  float: left
+}
+
+#panel-lecture #lecture-cards .lecture-user-memo {
+  overflow: initial
+}
+
+#panel-lecture-search #lecture-search-result tr:nth-child(even) {
+  background-color: #ededed
+}
+
+#panel-lecture-search #lecture-search-result .lecture-year, #panel-lecture-search #lecture-search-result .lecture-term {
+  min-width: 60px
+}
+
+#panel-lecture-search #lecture-search-result .lecture-teacher {
+  min-width: 80px
+}
+
+#panel-lecture-search #lecture-search-result .lecture-year, #panel-lecture-search #lecture-search-result .lecture-term, #panel-lecture-search #lecture-search-result .lecture-name, #panel-lecture-search #lecture-search-result .lecture-teacher, #panel-lecture-search #lecture-search-result .lecture-function {
+  text-align: center
+}
+
+#panel-lecture-search #lecture-search-result .lecture-function {
+  width: 150px
+}
+
+#template-lecture-card, #template-lecture-search-result {
+  display: none
+}

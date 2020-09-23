@@ -1,6 +1,6 @@
 {
   "name": "fixer",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description" : "more useful TUT portal",
   "permissions": ["activeTab", "declarativeContent", "storage"], //"webRequest", "*://service.cloud.teu.ac.jp/*"],
   "background": {

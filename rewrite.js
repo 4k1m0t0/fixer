@@ -17,6 +17,13 @@ function loading(){
   element.insertBefore(loader, element.firstChild);
 }
 
+function removeloadanimation(){
+  const load = document.getElementById("loading");
+  load.setAttribute("class", "loaded");
+  //load.classList.add('loaded');
+}
+
+
 function addtimetotimetable(){
   // https://service.cloud.teu.ac.jp/inside2/hachiouji/computer_science/%e6%8e%88%e6%a5%ad%e9%96%a2%e9%80%a3/
   // 余裕があったらスクレイピング
@@ -79,13 +86,6 @@ function addExtensionComment(){
   f.appendChild(text);
 }
 
-function removeloadanimation(){
-  const load = document.getElementById("loading");
-  load.setAttribute("class", "loaded");
-  //load.classList.add('loaded');
-}
-
-
 function setDomSetting(){
   setOnclickToButton();
   //setTimeout(setOnclickToButton(), 2000);
@@ -118,31 +118,34 @@ function removeIndexSectionStyle(){
 }
 
 function change(){
-    //return new Promise(resolve => {
-      //document.querySelector("style").remove();
-      // items is getting timetable element
-      let items = document.getElementsByClassName("lecture-navi-link");
-      for (let item of items) {
-        // get lesson information
-        let t = item.getAttribute("id").slice(13);
-        let s = document.getElementById("lecture-"+t);
-        // get href
-        let ss = s.querySelector("a").getAttribute("href");
-        let i = item.getAttribute("id");
-        // change dom href
-        document.getElementById(i).removeAttribute("href");
-        document.getElementById(i).setAttribute("href", ss);
-        document.getElementById(i).setAttribute("target", "_blank");
-        document.getElementById(i).setAttribute("rel", "noopener noreferrer");
-        document.getElementById(i).classList.add("lecture-url-link");
-        // remove class: this class curse some Exception in portal.
-        // shape up like pure "lecture-url-link"
-        //document.getElementById(i).classList.remove("lecture-navi-link");
-        document.getElementById(i).classList.remove("hpjax");
-        //document.getElementById(i).insertAdjacentHTML("afterbegin", <>)
-        //console.log("ex");
-      }
-      //resolve(true);
+  // items is getting timetable element
+  // this function rewrite timetable's  href tag. from lecture-card
+  let items = document.getElementsByClassName("lecture-navi-link");
+  for (let item of items) {
+    // get lesson information
+    // id example is "lecture-navi-7453"
+    // follow slice is get 7453. this matches lecture-card id.
+
+    let targetLectureId = item.getAttribute("id").slice(13);
+    let containUrlElement = document.getElementById("lecture-"+targetLectureId);
+
+    // get href
+    let targetUrl = containUrlElement.querySelector("a").getAttribute("href");
+
+    let changeObjectId = item.getAttribute("id");
+    let targetElement = document.getElementById(changeObjectId);
+    // change dom href
+
+    targetElement.removeAttribute("href");
+    targetElement.setAttribute("href", targetUrl);
+    targetElement.setAttribute("target", "_blank");
+    targetElement.setAttribute("rel", "noopener noreferrer");
+    targetElement.classList.add("lecture-url-link");
+
+    // remove class: this class curse some Exception in portal.
+    // shape up like pure "lecture-url-link"
+    targetElement.classList.remove("hpjax");
+  }
 }
 /*
   function changeElementOrder(){
@@ -195,28 +198,9 @@ window.onload = function (){
   //setDisplayPage();
 };
 
-//if(lf == 1){
-  //*change();
-  //loading();
-  //setOnclickToButton();
-  //changeElementOrder();
-  //addtimetotimetable();
-
-  //changePortalSectionStructure();
-  //addExtensionComment();
-  //*promote();
-//}
-
-let flug = 1;
-let f = 1;
-let fl = 1;
-//let lf = 0;
 chrome.storage.sync.get(["option"], function(data) {
   if(data.option==="on"){
-    /*executeFunc(loading);*/
     executeFunc(change);
-    //executeFunc(addtimetotimetable);
-    //executeFunc(cssrewrite);
   }
 });
 

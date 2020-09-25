@@ -15,7 +15,7 @@ html body {
   font-family: "Noto Sans JP","Zilla Slab", sans-serif, serif;
   animation: opening;
   animation-duration: 1s;
-  animation-delay: 3s;
+  animation-delay: 4s;
 }
 
 @keyframes opening{
@@ -41,10 +41,6 @@ body #contents #panel-index{
 #global-header{
   background-color: #ffffff;
   box-shadow: none;
-}
-
-html body #global-header {
-  /*width: initial;*/
 }
 
 html>body>header>a>h1 {
@@ -86,11 +82,11 @@ html body #contents #panel-index
  *
  */
 
-/* table setting */
+/* lecture page(table) setting */
 
 html body #panel-lecture,
 html body #contents .content-panel
-/*html body .content-active*/{
+{
   box-shadow: none;
   min-height: auto;
 }
@@ -107,6 +103,26 @@ html body #panel-lecture #lecture-navi{
   padding: 0;
   margin: 0;
   border-bottom: none;
+}
+
+html body #glh-back{
+  width: 70%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+html body #glh-back a h1{
+  color: #000000;
+  float: left;
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 15px;
+}
+
+html body #glh-back #glh-content .profile-box{
+  float: right;
+  height: 54px;
+  line-height: 54px;
 }
 
 /* もしかしたら使うかも
@@ -130,10 +146,10 @@ html #panel-lecture #lecture-navi .portal-timetable th, #panel-lecture #lecture-
   justify-content: center;
 }
 
-/*{
-  justify-content: center;
+html body #contents .content-panel .portal-section{
+  width: 70%;
+  margin: 0 auto;
 }
-*/
 /* table setting end*/
 
 #top-padding{
@@ -173,5 +189,9 @@ html body>footer{
   #top-padding{
     display: none;
     /*height: 60px;*/
+  }
+
+  html body #glh-back #glh-content .profile-box{
+    display: none;
   }
 }
